@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на свадьбу - Иван и Анна</title>
+    <title>Приглашение на свадьбу - Жанара и Айбек</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
@@ -25,7 +25,7 @@
     <div class="flex-1 overlay">
         <!-- Header Section -->
         <header class="text-center py-12">
-            <h1 class="header-text text-5xl md:text-6xl font-bold text-pink-600">Иван & Анна</h1>
+            <h1 class="header-text text-5xl md:text-6xl font-bold text-pink-600">Жанара & Айбек</h1>
             <p class="mt-4 text-lg md:text-xl text-gray-700">Приглашаем вас на нашу свадьбу!</p>
         </header>
 
@@ -38,15 +38,15 @@
                 <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
                         <h3 class="text-xl font-semibold text-pink-600">Дата</h3>
-                        <p class="mt-2 text-gray-600">20 июня 2025</p>
+                        <p class="mt-2 text-gray-600">2 августа 2025</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-pink-600">Время</h3>
-                        <p class="mt-2 text-gray-600">16:00</p>
+                        <p class="mt-2 text-gray-600">17:30</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-pink-600">Место</h3>
-                        <p class="mt-2 text-gray-600">Ресторан "Золотой Век"<br>ул. Центральная, 123, Москва</p>
+                        <p class="mt-2 text-gray-600">Ресторан Kuanysh Grand Hall<br>ул. Халиуллина 210/2, Алматы</p>
                     </div>
                 </div>
             </section>
@@ -61,36 +61,23 @@
                 </div>
             </section>
 
-            <!-- RSVP Form -->
-            <section class="py-12">
-                <h2 class="header-text text-3xl md:text-4xl font-semibold text-center text-gray-800">Подтвердите ваше присутствие</h2>
-                <form id="rsvp-form" class="mt-8 max-w-lg mx-auto space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Ваше имя</label>
-                        <input type="text" id="name" name="name" required class="mt-1 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
-                    </div>
-                    <div>
-                        <label for="guests" class="block text-sm font-medium text-gray-700">Количество гостей</label>
-                        <input type="number" id="guests" name="guests" min="1" required class="mt-1 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700">Пожелания (по желанию)</label>
-                        <textarea id="message" name="message" rows="4" class="mt-1 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-pink-600 text-white py-3 rounded-md hover:bg-pink-700 transition">Отправить</button>
-                </form>
+            <!-- RSVP Button -->
+            <section class="py-12 text-center">
+                <h2 class="header-text text-3xl md:text-4xl font-semibold text-gray-800">Подтвердите ваше присутствие</h2>
+                <p class="mt-4 text-lg text-gray-600">Нажмите на кнопку ниже, чтобы заполнить форму и подтвердить ваше участие.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJDNY74hMh7iyqVXpDlPvokk4TKer9msHjC_4MuMK9EAKn_g/viewform?usp=dialog" target="_blank" class="mt-6 inline-block bg-pink-600 text-white py-3 px-8 rounded-md hover:bg-pink-700 transition">Подтвердить участие</a>
             </section>
         </main>
 
         <!-- Footer -->
         <footer class="text-center py-8">
-            <p class="text-gray-600">С любовью, Иван и Анна</p>
+            <p class="text-gray-600">С любовью, Жанара и Айбек</p>
         </footer>
     </div>
 
     <script>
         // Countdown Timer
-        const weddingDate = new Date('2025-06-20T16:00:00').getTime();
+        const weddingDate = new Date('2025-08-02T17:30:00+05:00').getTime();
         const countdown = setInterval(() => {
             const now = new Date().getTime();
             const distance = weddingDate - now;
@@ -105,17 +92,6 @@
                 document.getElementById('countdown').textContent = 'Свадьба началась!';
             }
         }, 1000);
-
-        // RSVP Form Submission (Frontend-only example)
-        document.getElementById('rsvp-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const guests = document.getElementById('guests').value;
-            const message = document.getElementById('message').value;
-            alert(`Спасибо, ${name}! Мы получили ваше подтверждение на ${guests} гостей.`);
-            // In a real application, send data to a backend here
-            document.getElementById('rsvp-form').reset();
-        });
     </script>
 </body>
 </html>
